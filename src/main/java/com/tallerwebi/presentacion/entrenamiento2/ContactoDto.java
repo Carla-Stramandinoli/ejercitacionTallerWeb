@@ -6,6 +6,10 @@ public class ContactoDto {
     private String email;
     private String mensajeContacto;
 
+
+    public ContactoDto() {
+
+    }
     public ContactoDto(String nombre, String email, String mensajeContacto) {
         this.nombre = nombre;
         this.email = email;

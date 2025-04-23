@@ -24,9 +24,17 @@ public class ControladorContactoTest {
 
         ModelAndView modelAndView = contactoController.registrarContacto(contacto);
 
-        assertThat(modelAndView.getViewName(), equalTo("contacto"));
+        assertThat(modelAndView.getViewName(), equalTo("confirmacion"));
         assertThat(modelAndView.getModel().get("mensaje"), equalTo("Contacto registrado con exito"));
 //        assertThat(modelAndView.getModel().get("contactoDto"), equalTo(contacto));
+    }
 
+    @Test
+    public void dadoQueExisteUnControladorDeContactoDeberiaPoderMostrar() {
+        ContactoDto contacto = new ContactoDto("Carla", "car@gmail.com", "Este es el contacto de prueba");
+
+        ModelAndView modelAndView = contactoController.mostrarVistaFormulario();
+
+        assertThat(modelAndView.getViewName(), equalTo("contacto"));
     }
 }
