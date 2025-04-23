@@ -15,7 +15,7 @@ public class ContactoController {
         ModelMap model = new ModelMap();
 
         model.put("mensaje", "Contacto registrado con exito");
-        model.put("contactoDto", new ContactoDto(contacto.getNombre(), contacto.getEmail(), contacto.getMensajeContacto()));
+        model.put("contactoDto", contacto);
         return new ModelAndView("confirmacion", model);
     }
 
