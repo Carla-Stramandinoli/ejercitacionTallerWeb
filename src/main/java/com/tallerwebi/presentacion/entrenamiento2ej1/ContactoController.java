@@ -1,4 +1,4 @@
-package com.tallerwebi.presentacion.entrenamiento2;
+package com.tallerwebi.presentacion.entrenamiento2ej1;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -16,13 +16,13 @@ public class ContactoController {
 
         model.put("mensaje", "Contacto registrado con exito");
         model.put("contactoDto", contacto);
-        return new ModelAndView("confirmacion", model);
+        return new ModelAndView("entrenamiento2ej1/confirmacion", model);
     }
 
     @GetMapping(path = "/contacto")
     public ModelAndView mostrarVistaFormulario() {
         ModelMap model = new ModelMap();
         model.put("contactoDto", new ContactoDto());
-        return new ModelAndView("contacto");
+        return new ModelAndView("entrenamiento2ej1/contacto", model);
     }
 }

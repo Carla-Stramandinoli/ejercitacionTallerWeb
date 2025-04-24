@@ -1,7 +1,7 @@
 package com.tallerwebi.presentacion;
 
-import com.tallerwebi.presentacion.entrenamiento2.ContactoDto;
-import com.tallerwebi.presentacion.entrenamiento2.ContactoController;
+import com.tallerwebi.presentacion.entrenamiento2ej1.ContactoDto;
+import com.tallerwebi.presentacion.entrenamiento2ej1.ContactoController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.servlet.ModelAndView;

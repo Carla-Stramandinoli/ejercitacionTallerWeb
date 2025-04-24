@@ -1,4 +1,4 @@
-package com.tallerwebi.presentacion.entrenamiento2;
+package com.tallerwebi.presentacion.entrenamiento2ej1;
 
 public class ContactoDto {
 
