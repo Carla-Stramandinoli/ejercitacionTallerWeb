@@ -16,13 +16,13 @@ public class ContactoController {
 
         model.put("mensaje", "Contacto registrado con exito");
         model.put("contactoDto", contacto);
-        return new ModelAndView("entrenamiento2ej1/confirmacion", model);
+        return new ModelAndView("confirmacion", model);
     }
 
     @GetMapping(path = "/contacto")
     public ModelAndView mostrarVistaFormulario() {
         ModelMap model = new ModelMap();
         model.put("contactoDto", new ContactoDto());
-        return new ModelAndView("entrenamiento2ej1/contacto", model);
+        return new ModelAndView("contacto", model);
     }
 }
