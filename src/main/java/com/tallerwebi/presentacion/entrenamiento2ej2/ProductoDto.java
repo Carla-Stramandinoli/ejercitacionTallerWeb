@@ -4,13 +4,15 @@ import java.util.Objects;
 
 public class ProductoDto {
 
-    private final Long id;
+    private Long id;
     private String nombre;
+    private String descripcion;
     private Double precio;
 
-    public ProductoDto(Long id, String nombre, Double precio) {
+    public ProductoDto(Long id, String descripcion, String nombre, Double precio) {
         this.id = id;
         this.nombre = nombre;
+        this.descripcion = descripcion;
         this.precio = precio;
     }
 
@@ -36,6 +38,14 @@ public class ProductoDto {
 
     public void setPrecio(Double precio) {
         this.precio = precio;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     @Override

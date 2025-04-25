@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.is;
+
 
 public class ControladorProductosTest {
 
@@ -45,12 +45,24 @@ public class ControladorProductosTest {
         Long id = 1L;
         ModelAndView modelAndView =  productoController.verDetalle(id);
 
-
-
-        String vistaEsperada = "detalle";
+        String vistaEsperada = "detalleProducto";
 
         assertThat(modelAndView.getViewName(), equalTo(vistaEsperada));
         assertThat(modelAndView.getModelMap().get("producto"), equalTo(id));
+
+    }
+
+    @Test
+    public void dadoQueExisteUnProductoControllerCuandoOprimoVerDetalleYNoExisteElProductoMeMuestraUnMensajeDeError(){
+        Long id = 4L;
+        ModelAndView modelAndView =  productoController.verDetalle(id);
+
+        String vistaEsperada = "detalleProducto";
+
+        String mensaje = "No se encontro el producto";
+
+        assertThat(modelAndView.getViewName(), equalTo(vistaEsperada));
+        assertThat(modelAndView.getModel().get("mensaje"), equalTo(mensaje));
 
     }
 }

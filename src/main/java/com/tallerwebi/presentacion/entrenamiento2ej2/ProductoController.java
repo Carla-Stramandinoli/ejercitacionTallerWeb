@@ -1,5 +1,6 @@
 package com.tallerwebi.presentacion.entrenamiento2ej2;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -7,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.ArrayList;
 import java.util.List;
 
+@Controller
 public class ProductoController {
 
 private List<ProductoDto> productos;
@@ -31,16 +33,27 @@ public ModelAndView listarProductos(){
         return productos;
     }
 
+
     @GetMapping("/productos")
     public ModelAndView verDetalle(Long id) {
     ModelMap model = new ModelMap();
 
-    for (ProductoDto productoDto : this.productos) {
-        if (productoDto.getId().equals(id)) {
-            model.put("producto", productoDto);
-        }
+    Long productoBuscado = buscarPorId(id);
+    if(productoBuscado != null) {
+        model.put("producto", productoBuscado);
+    } else {
+        model.put("mensaje", "No se encontro el producto");
     }
-return new ModelAndView("detalleProducto", model);
+        return new ModelAndView("detalleProducto", model);
+    }
+
+    private Long buscarPorId(Long id) {
+        for (ProductoDto productoDto : this.productos) {
+            if (productoDto.getId().equals(id)) {
+                return productoDto.getId();
+            }
+        }
+        return null;
     }
 }
 
