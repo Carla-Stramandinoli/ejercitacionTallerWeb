@@ -29,9 +29,9 @@ public class ControladorProductosTest {
         String vistaEsperada = "productos";
 
         List<ProductoDto> productosEsperados = new ArrayList<>();
-        productosEsperados.add(new ProductoDto(1L, "Producto 1", 10.3));
-        productosEsperados.add(new ProductoDto(2L, "Producto 2", 30.3));
-        productosEsperados.add(new ProductoDto(3L, "Producto 3", 40.3));
+        productosEsperados.add(new ProductoDto(1L, "Producto 1", "descripcion producto 1", 10.3));
+        productosEsperados.add(new ProductoDto(2L, "Producto 2", "descripcion producto 1", 30.3));
+        productosEsperados.add(new ProductoDto(3L, "Producto 3", "descripcion producto 1", 40.3));
 
         List<ProductoDto> productosObtenidos = productoController.getProductos();
 
