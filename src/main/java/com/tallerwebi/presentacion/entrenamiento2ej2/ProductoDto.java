@@ -9,7 +9,7 @@ public class ProductoDto {
     private String descripcion;
     private Double precio;
 
-    public ProductoDto(Long id, String descripcion, String nombre, Double precio) {
+    public ProductoDto(Long id,  String nombre, String descripcion, Double precio) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;

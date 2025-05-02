@@ -16,9 +16,9 @@ private List<ProductoDto> productos;
 public ProductoController() {
     this.productos = new ArrayList<ProductoDto>();
 
-    productos.add(new ProductoDto(1L, "Producto 1", 10.3));
-    productos.add(new ProductoDto(2L, "Producto 2", 30.3));
-    productos.add(new ProductoDto(3L, "Producto 3", 40.3));
+    productos.add(new ProductoDto(1L, "Producto 1", "producto1", 20.3));
+    productos.add(new ProductoDto(2L, "Producto 2", "producto2", 30.3));
+    productos.add(new ProductoDto(3L, "Producto 3", "producto2", 40.3));
 }
 
 @GetMapping("/productos")
